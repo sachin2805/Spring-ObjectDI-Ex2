@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean class="com.bean.Date" id="d1">
+		<property name="dd" value="26"></property>
+		<property name="mm" value="06"></property>
+		<property name="yy" value="2021"></property>
+	</bean>
+
+	<bean class="com.bean.Employee" id="e1">
+		<property name="name" value="Meenakshi"></property>
+		<property name="designation" value="Design Operator"></property>
+		<property name="salary" value="65600"></property>
+		<property name="joiningDate" ref="d1"></property>
+	</bean>
+
+
+
+	<bean class="com.bean.Employee" id="e2">
+		<property name="name" value="Nayna"></property>
+		<property name="designation" value="Softwear Engg"></property>
+		<property name="salary" value="70550"></property>
+		<property name="joiningDate">
+			<!-- Inner Bean Defination -->
+			<bean class="com.bean.Date">
+				<property name="dd" value="28"></property>
+				<property name="mm" value="07"></property>
+				<property name="yy" value="2021"></property>
+
+			</bean>
+		</property>
+	</bean>
+
+
+	<bean class="com.bean.Employee" id="e3">
+		<property name="name" value="Akash Shingade"></property>
+		<property name="designation" value="CS Operator"></property>
+		<property name="salary" value="60000"></property>
+		<property name="joiningDate" ref="d1"></property>
+	</bean>
+</beans>
+	
